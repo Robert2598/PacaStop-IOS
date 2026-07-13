@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-agents-architect": {
+      "source": "davila7/claude-code-templates",
+      "sourceType": "github",
+      "skillPath": "cli-tool/components/skills/ai-research/ai-agents-architect/SKILL.md",
+      "computedHash": "2dc72a05cc5e2b4edde49a5c3d307a202815caa4a98faa37decd8b43af173626"
+    },
+    "clerk-swift": {
+      "source": "midudev/autoskills",
+      "sourceType": "github",
+      "skillPath": "packages/autoskills/skills-registry/clerk-swift/SKILL.md",
+      "computedHash": "a3648958dfb6b4336627a70a3ec2c46dc7b39712ecd22184ee152583de0672dd"
+    },
+    "revenuecat-patterns": {
+      "source": "vibeeval/vibecosystem",
+      "sourceType": "github",
+      "skillPath": "skills/revenuecat-patterns/SKILL.md",
+      "computedHash": "e303c9c106e8cee76106a9863a9998102b7bf954c010a1b0aeee83657254cb2a"
+    }
+  }
+}

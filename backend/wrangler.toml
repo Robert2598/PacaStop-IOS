@@ -1,0 +1,43 @@
+name = "pacastop-ai-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Rate-limiting / abuse-control state. Create with:
+#   wrangler kv:namespace create RATE_LIMIT
+# then paste the returned id below.
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "1aa054dad72e4067a8423328f83de130"
+
+# ── Public (non-secret) config ────────────────────────────────────────────────
+[vars]
+# Clerk Frontend API host for the production instance (from the pk_live_ key:
+# pk_live_Y2xlcmsucGFjYS1zdG9wLnJvJA decodes to "clerk.paca-stop.ro$").
+CLERK_ISSUER = "https://clerk.paca-stop.ro"
+CLERK_JWKS_URL = "https://clerk.paca-stop.ro/.well-known/jwks.json"
+
+# Require a valid Clerk session on every request. MUST stay "true" in production —
+# only the literal "false" bypasses auth, so a typo fails secure (auth stays required).
+REQUIRE_AUTH = "true"
+
+# Server-side RevenueCat premium check — ENABLED. On top of the client HARD PAYWALL, the proxy
+# independently confirms the `premium` entitlement with RevenueCat's REST API (keyed to the Clerk
+# user id, via `Purchases.logIn(clerkUserId)` on sign-in) so the mentor endpoint can't be reached
+# by a tampered client. REVENUECAT_SECRET_KEY must be set (it is) or hasPremium() returns false for
+# everyone. NOTE: RevenueCat derives the entitlement from the device's shared Apple-ID receipt, so
+# a device-subscribed user resolves to premium once RevenueCat aliases their Clerk id to that
+# purchase. If a genuine subscriber ever gets a false 403, the `premium` entitlement's product
+# mapping in the RevenueCat dashboard is the thing to check — flip back to "false" as a fast rollback.
+REQUIRE_PREMIUM = "true"
+
+# Rate limits (per authenticated user).
+RATE_PER_MINUTE = "8"
+RATE_PER_DAY = "120"
+
+# RevenueCat project id (proj…) — the V2 premium check keys by project. Not a secret.
+REVENUECAT_PROJECT_ID = "proje852f589"
+
+# ── Secrets — set with `wrangler secret put <NAME>`; never commit these ────────
+#   ANTHROPIC_API_KEY        sk-ant-...   (server-only; NEVER ships in the app)
+#   REVENUECAT_SECRET_KEY    sk_...       (optional; only if REQUIRE_PREMIUM=true)

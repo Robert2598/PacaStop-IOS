@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PăcăStop — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0e11; --desk:#08090b; --surface:#16181d; --deep:#121317; --raised:#1c1f26;
+    --line:rgba(255,255,255,.08); --t1:#f4f5f7; --t2:rgba(244,245,247,.55); --t3:rgba(244,245,247,.4);
+    --lime:#C6F03C; --red:#FF3B30; --softred:#ff8079; --amber:#ffb84d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--desk);color:var(--t1);font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1040px;margin:0 auto;padding:56px 28px 90px}
+  h1{font-family:'Anton',sans-serif;font-size:64px;letter-spacing:1px;margin:0 0 6px;line-height:.95}
+  h2{font-family:'Anton',sans-serif;font-size:26px;letter-spacing:.6px;margin:56px 0 4px}
+  .kick{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--lime);text-transform:uppercase;margin-bottom:8px}
+  .sub{color:var(--t2);max-width:640px;margin:0 0 8px}
+  .rule{height:1px;background:var(--line);margin:14px 0 26px}
+  .grid{display:grid;gap:16px}
+  .cols4{grid-template-columns:repeat(4,1fr)}
+  .cols3{grid-template-columns:repeat(3,1fr)}
+  .cols2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px}
+  .sw{border-radius:16px;border:1px solid var(--line);overflow:hidden;background:var(--surface)}
+  .sw .chip{height:74px}
+  .sw .meta{padding:10px 12px}
+  .sw .name{font-size:13px;font-weight:600}
+  .sw .val{font-size:11px;color:var(--t3);font-family:ui-monospace,Menlo,monospace}
+  .badge-lime{background:var(--lime);color:#0d0e11}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--lime);background:rgba(198,240,60,.08);padding:2px 6px;border-radius:5px}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);font-size:14px}
+  th{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--t3);font-weight:700}
+  .anton{font-family:'Anton',sans-serif}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(198,240,60,.1);border:1px solid rgba(198,240,60,.28);border-radius:13px;padding:8px 13px 8px 11px;color:var(--lime)}
+  .flame{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:9px solid var(--lime)}
+  .btn{border:none;border-radius:15px;height:54px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Space Grotesk';font-size:16px;font-weight:700;cursor:default;width:100%}
+  .btn-lime{background:var(--lime);color:#0d0e11}
+  .btn-white{background:#f4f5f7;color:#0d0e11}
+  .btn-dark{background:#16181d;color:#f4f5f7;border:1px solid var(--line)}
+  .btn-panic{background:var(--red);color:#fff;border-radius:20px;height:64px;font-family:'Anton';font-size:22px;letter-spacing:1px}
+  .toggle{width:48px;height:28px;border-radius:14px;position:relative;flex:none}
+  .knob{position:absolute;top:2px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .reel{position:relative;width:34px;height:54px;background:#08090b;border:1px solid var(--line);border-radius:7px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 3px 8px rgba(0,0,0,.78)}
+  .reel span{font-family:'Anton';font-size:36px;color:var(--lime);text-shadow:0 0 12px rgba(198,240,60,.6)}
+  .reel .line{position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6)}
+  .bulb{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 7px var(--lime)}
+  .car{position:relative;width:150px;height:78px;margin:6px auto}
+  .navmini{display:flex;background:rgba(15,16,20,.95);border-top:1px solid var(--line);border-radius:16px;padding:10px 8px;overflow:hidden}
+  .navmini .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:10.5px;font-weight:600}
+  .dot{width:9px;height:9px;border-radius:50%}
+  ul.motion{color:var(--t2);padding-left:18px}
+  ul.motion li{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+    <div style="width:40px;height:40px;border-radius:11px;background:var(--lime);display:flex;align-items:center;justify-content:center"><div style="width:17px;height:17px;border-radius:5px;background:#0d0e11;transform:rotate(45deg)"></div></div>
+    <div class="anton" style="font-size:26px;letter-spacing:2px">PĂCĂSTOP</div>
+  </div>
+  <h1>Design System</h1>
+  <p class="sub">Visual language for the anti-slots app. Dark, bold, blunt — lime = money you keep, red = danger. Companion to <code>PacaStop — Handover.md</code>.</p>
+
+  <h2>Colors</h2>
+  <div class="rule"></div>
+  <div class="grid cols4">
+    <div class="sw"><div class="chip" style="background:#0d0e11"></div><div class="meta"><div class="name">App background</div><div class="val">#0d0e11</div></div></div>
+    <div class="sw"><div class="chip" style="background:#16181d"></div><div class="meta"><div class="name">Surface / card</div><div class="val">#16181d</div></div></div>
+    <div class="sw"><div class="chip" style="background:#121317"></div><div class="meta"><div class="name">Deep surface</div><div class="val">#121317</div></div></div>
+    <div class="sw"><div class="chip" style="background:#1c1f26"></div><div class="meta"><div class="name">Raised row</div><div class="val">#1c1f26</div></div></div>
+    <div class="sw"><div class="chip badge-lime"></div><div class="meta"><div class="name">Accent — money/win</div><div class="val">#C6F03C</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FF3B30"></div><div class="meta"><div class="name">Danger — panic/loss</div><div class="val">#FF3B30</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ff8079"></div><div class="meta"><div class="name">Soft red (text)</div><div class="val">#ff8079</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ffb84d"></div><div class="meta"><div class="name">Amber (caution)</div><div class="val">#ffb84d</div></div></div>
+    <div class="sw"><div class="chip" style="background:#f4f5f7"></div><div class="meta"><div class="name">Text primary</div><div class="val">#f4f5f7</div></div></div>
+    <div class="sw"><div class="chip" style="background:#8b8d90"></div><div class="meta"><div class="name">Text secondary</div><div class="val">rgba(…,.55)</div></div></div>
+    <div class="sw"><div class="chip" style="background:#08090b"></div><div class="meta"><div class="name">Desk backdrop</div><div class="val">#08090b</div></div></div>
+    <div class="sw"><div class="chip" style="background:#22252b"></div><div class="meta"><div class="name">Hairline / border</div><div class="val">rgba(…,.08)</div></div></div>
+  </div>
+
+  <h2>Typography</h2>
+  <div class="rule"></div>
+  <div class="grid cols2">
+    <div class="card">
+      <div class="kick">Display — Anton</div>
+      <div class="anton" style="font-size:52px;line-height:.95">NU FI FRAIERUL</div>
+      <div class="anton" style="font-size:52px;line-height:.95;color:var(--lime)">1.131,42 lei</div>
+      <p class="sub" style="margin-top:12px">Big numbers, rank names, screen titles, jackpot digits, statements. All-caps friendly.</p>
+    </div>
+    <div class="card">
+      <div class="kick">UI / Body — Space Grotesk</div>
+      <div style="font-weight:700;font-size:20px">Blochează pariurile</div>
+      <div style="font-weight:500;font-size:16px;margin-top:6px">Aplicații și site-uri de cazino.</div>
+      <div style="color:var(--t2);font-size:14px;margin-top:6px">Regular / 400 · Medium / 500 · SemiBold / 600 · Bold / 700</div>
+      <p class="sub" style="margin-top:12px">Everything else. Must render Romanian diacritics ă â î ș ț.</p>
+    </div>
+  </div>
+
+  <h2>Components</h2>
+  <div class="rule"></div>
+  <div class="grid cols3">
+    <div class="card">
+      <div class="kick">Buttons</div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="btn btn-lime">ÎNCEP ACUM</div>
+        <div class="btn btn-white">Continuă cu Apple</div>
+        <div class="btn btn-dark">Continuă cu Google</div>
+        <div class="btn btn-panic">BUTON DE PANICĂ</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="kick">Toggles &amp; streak chip</div>
+      <div style="display:flex;gap:14px;align-items:center;margin-bottom:16px">
+        <div class="toggle" style="background:var(--lime)"><div class="knob" style="left:22px"></div></div>
+        <div class="toggle" style="background:rgba(255,255,255,.16)"><div class="knob" style="left:2px"></div></div>
+        <span style="color:var(--t2);font-size:13px">on / off</span>
+      </div>
+      <div class="tag"><div class="flame"></div><span class="anton" style="font-size:21px">12</span><span style="font-size:10px;font-weight:700;letter-spacing:.8px;color:rgba(198,240,60,.72)">ZILE</span></div>
+      <p class="sub" style="margin-top:12px;font-size:13px">Compact streak chip (Home header).</p>
+    </div>
+    <div class="card">
+      <div class="kick">Badge</div>
+      <div style="display:flex;gap:22px">
+        <div style="text-align:center">
+          <div style="width:66px;height:66px;border-radius:20px;background:var(--lime);color:#0d0e11;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700">✓</div>
+          <div style="font-size:11.5px;margin-top:8px">O săptămână</div>
+        </div>
+        <div style="text-align:center">
+          <div style="width:66px;height:66px;border-radius:20px;background:#1a1c22;border:1.5px solid var(--line)"></div>
+          <div style="font-size:11.5px;margin-top:8px;color:var(--t3)">O lună</div>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:12px;font-size:13px">Unlocked (lime + check) vs locked.</p>
+    </div>
+  </div>
+
+  <div class="grid cols2" style="margin-top:16px">
+    <div class="card">
+      <div class="kick">Jackpot — "Ai strâns"</div>
+      <div style="background:radial-gradient(120% 100% at 50% 0%,#20241a,#0e0f13 76%);border:1px solid rgba(198,240,60,.3);border-radius:20px;padding:16px 14px 20px">
+        <div style="display:flex;justify-content:center;gap:9px;margin-bottom:14px">
+          <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+        </div>
+        <div style="text-align:center;font-size:11px;font-weight:700;letter-spacing:3.5px;color:rgba(198,240,60,.9);margin-bottom:14px">AI STRÂNS</div>
+        <div style="display:flex;align-items:flex-end;justify-content:center;gap:4px">
+          <div class="reel"><span>1</span><div class="line"></div></div>
+          <div class="anton" style="font-size:28px;color:rgba(198,240,60,.75);padding-bottom:6px">.</div>
+          <div class="reel"><span>1</span><div class="line"></div></div>
+          <div class="reel"><span>3</span><div class="line"></div></div>
+          <div class="reel"><span>1</span><div class="line"></div></div>
+          <div class="anton" style="font-size:28px;color:rgba(198,240,60,.75);padding-bottom:6px">,</div>
+          <div class="reel" style="width:26px;height:46px"><span style="font-size:26px">4</span><div class="line"></div></div>
+          <div class="reel" style="width:26px;height:46px"><span style="font-size:26px">2</span><div class="line"></div></div>
+          <div class="anton" style="font-size:20px;color:rgba(198,240,60,.7);padding:0 0 8px 6px">lei</div>
+        </div>
+        <div style="text-align:center;font-size:12.5px;color:var(--t3);margin-top:14px">de când nu mai hrănești aparatul</div>
+      </div>
+      <p class="sub" style="margin-top:12px;font-size:13px">Slot-machine display, repurposed to count money kept. Digits tick live; bulbs blink in a chase.</p>
+    </div>
+    <div class="card">
+      <div class="kick">Bottom navigation</div>
+      <div class="navmini">
+        <div class="tab" style="color:var(--lime)">
+          <div style="position:relative;width:22px;height:19px"><div style="position:absolute;top:0;left:0;right:0;margin:0 auto;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:9px solid var(--lime)"></div><div style="position:absolute;bottom:0;left:3.5px;width:15px;height:11px;background:var(--lime);border-radius:0 0 2px 2px"></div></div>
+          Acasă
+        </div>
+        <div class="tab" style="color:var(--t3)">
+          <div style="display:flex;align-items:flex-end;gap:3px;height:19px"><div style="width:5px;height:9px;background:currentColor;border-radius:2px"></div><div style="width:5px;height:14px;background:currentColor;border-radius:2px"></div><div style="width:5px;height:19px;background:currentColor;border-radius:2px"></div></div>
+          Progres
+        </div>
+        <div class="tab" style="color:var(--t3)">
+          <div style="width:22px;height:16px;display:flex;flex-direction:column;justify-content:space-between"><div style="height:2.5px;background:currentColor;border-radius:2px"></div><div style="height:2.5px;background:currentColor;border-radius:2px"></div></div>
+          Setări
+        </div>
+      </div>
+      <p class="sub" style="margin-top:12px;font-size:13px">Active tab = lime. Shown on Home, Progres, Setări only.</p>
+      <div class="kick" style="margin-top:20px">Panic reality-check</div>
+      <div style="background:rgba(255,59,48,.08);border:1px solid rgba(255,59,48,.28);border-radius:16px;padding:16px;text-align:center">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--softred)">ERAI PE CALE SĂ DAI</div>
+        <div class="anton" style="font-size:34px;color:var(--red)">220 lei</div>
+        <div style="font-size:12px;color:var(--t2);margin-top:6px">Adică ~28 litri de benzină, aruncați pe un ecran care oricum câștigă.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Car / rank ladder</h2>
+  <div class="rule"></div>
+  <p class="sub">Status metaphor: the car upgrades as the streak grows — dull broken junker → sleek premium. Rendered as minimalist silhouettes (progression must read at a glance).</p>
+  <table>
+    <tr><th>From day</th><th>Car</th><th>Rank (RO)</th><th>Look</th></tr>
+    <tr><td>0</td><td>Dacie rablă</td><td class="anton" style="color:var(--lime)">Rabla</td><td>grey, boxy, exhaust smoke, red warning light</td></tr>
+    <tr><td>1</td><td>Dacia</td><td class="anton" style="color:var(--lime)">Te-ai trezit</td><td>clean, modest, blue-grey</td></tr>
+    <tr><td>7</td><td>VW Golf</td><td class="anton" style="color:var(--lime)">Ai prins viteză</td><td>sportier, silver</td></tr>
+    <tr><td>30</td><td>BMW</td><td class="anton" style="color:var(--lime)">Băiat serios</td><td>lower, darker, blue accent</td></tr>
+    <tr><td>90</td><td>Mercedes</td><td class="anton" style="color:var(--lime)">Șmecher</td><td>sleek, chrome</td></tr>
+    <tr><td>365</td><td>Mercedes-AMG</td><td class="anton" style="color:var(--lime)">Legendă</td><td>near-black, lime accents</td></tr>
+  </table>
+  <div class="car" title="representative silhouette">
+    <div style="position:absolute;left:7px;bottom:3px;width:126px;height:5px;border-radius:50%;background:rgba(0,0,0,.5);filter:blur(6px)"></div>
+    <div style="position:absolute;left:8px;top:26px;width:135px;height:26px;background:#c3c9d0;border-radius:8px 8px 4px 4px"></div>
+    <div style="position:absolute;left:50px;top:12px;width:60px;height:22px;background:#b3bac2;border-radius:14px 16px 0 0"></div>
+    <div style="position:absolute;left:55px;top:16px;width:50px;height:16px;background:#2f353c;border-radius:8px 10px 2px 2px"></div>
+    <div style="position:absolute;left:22px;bottom:2px;width:30px;height:30px;border-radius:50%;background:#1c1e22;box-shadow:inset 0 0 0 5px #d9dee3"></div>
+    <div style="position:absolute;right:22px;bottom:2px;width:30px;height:30px;border-radius:50%;background:#1c1e22;box-shadow:inset 0 0 0 5px #d9dee3"></div>
+    <div style="position:absolute;right:9px;top:32px;width:5px;height:7px;background:#f4f6df;border-radius:2px;box-shadow:0 0 6px #f4f6df"></div>
+    <div style="position:absolute;left:9px;top:34px;width:3px;height:8px;background:#e0362b;border-radius:2px;box-shadow:0 0 6px rgba(224,54,43,.8)"></div>
+  </div>
+
+  <h2>Motion</h2>
+  <div class="rule"></div>
+  <ul class="motion">
+    <li>Savings counter <b>ticks live</b> (last digits move every second).</li>
+    <li>Panic countdown <b>ring depletes</b> over 60s; button softly pulses red.</li>
+    <li>Jackpot marquee <b>bulbs blink</b> in a staggered chase.</li>
+    <li>Current car <b>gently floats</b>.</li>
+    <li>House-edge simulation <b>bars drain</b> left→right (lime → red).</li>
+    <li>Sheets <b>slide up</b>; screens/sections <b>fade up</b> on entrance.</li>
+  </ul>
+
+  <p class="sub" style="margin-top:40px;border-top:1px solid var(--line);padding-top:20px">Full rules, copy (RO+EN) and screen-by-screen behavior live in <code>PacaStop — Handover.md</code>. Interactive reference: <code>PacaStop App.dc.html</code>.</p>
+
+</div>
+</body>
+</html>

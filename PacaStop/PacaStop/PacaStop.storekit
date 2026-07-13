@@ -1,0 +1,115 @@
+{
+  "identifier" : "5B9A1C20-0001-4A00-9F00-PACASTOPSK01",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "499.99",
+      "familyShareable" : false,
+      "internalID" : "5B9A1C20-3000-4A00-9F00-PACASTOPLIF1",
+      "localizations" : [
+        {
+          "description" : "Acces complet, o singură plată. Pe viață.",
+          "displayName" : "Pe viață",
+          "locale" : "ro_RO"
+        },
+        {
+          "description" : "Full access, one-time payment. Lifetime.",
+          "displayName" : "Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.pixelpaw.pacastop.lifetime",
+      "referenceName" : "Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_billingIssuesEnabled" : false,
+    "_compatibilityTimeRate" : {
+      "P1M" : "P5M"
+    },
+    "_failTransactionsEnabled" : false,
+    "_locale" : "ro_RO",
+    "_storefront" : "ROU",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "5B9A1C20-1000-4A00-9F00-PACASTOPGRP1",
+      "localizations" : [
+
+      ],
+      "name" : "PacaStop Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "199.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "5B9A1C20-2000-4A00-9F00-PACASTOPYR01",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Acces complet, un an. Cel mai bun preț.",
+              "displayName" : "Anual",
+              "locale" : "ro_RO"
+            },
+            {
+              "description" : "Full access, one year. Best value.",
+              "displayName" : "Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pacastop.yearly.subscription",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly",
+          "subscriptionGroupID" : "5B9A1C20-1000-4A00-9F00-PACASTOPGRP1",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "34.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "5B9A1C20-2000-4A00-9F00-PACASTOPMO01",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Acces complet, lunar.",
+              "displayName" : "Lunar",
+              "locale" : "ro_RO"
+            },
+            {
+              "description" : "Full access, monthly.",
+              "displayName" : "Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pacastop.monthly.subscription",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly",
+          "subscriptionGroupID" : "5B9A1C20-1000-4A00-9F00-PACASTOPGRP1",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

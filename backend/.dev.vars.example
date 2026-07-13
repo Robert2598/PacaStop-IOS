@@ -1,0 +1,10 @@
+# Copy to `.dev.vars` for local `wrangler dev`. NEVER commit `.dev.vars`.
+# The Anthropic key is server-only and must never reach the iOS bundle.
+ANTHROPIC_API_KEY=sk-ant-your-key-here
+
+# Optional — only needed when REQUIRE_PREMIUM=true. RevenueCat SECRET key (sk_...),
+# used server-side to confirm the "premium" entitlement. Never the public appl_ key.
+REVENUECAT_SECRET_KEY=sk_your_revenuecat_secret_here
+
+# For local testing you can relax the gates in wrangler.toml [vars]:
+#   REQUIRE_AUTH=false  REQUIRE_PREMIUM=false

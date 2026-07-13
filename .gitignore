@@ -1,0 +1,35 @@
+# ── macOS ──
+.DS_Store
+**/.DS_Store
+
+# ── Xcode ──
+build/
+DerivedData/
+**/DerivedData/
+*.xcuserstate
+**/xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM
+*.dSYM.zip
+*.xcscmblueprint
+
+# ── Swift Package Manager ──
+.build/
+**/.swiftpm/
+
+# ── Secrets — NEVER commit real keys ──
+**/Secrets.plist
+backend/.dev.vars
+*.p8
+*.mobileprovision
+
+# ── Cloudflare Workers / Node ──
+node_modules/
+**/node_modules/
+backend/.wrangler/
+**/.wrangler/
+
+# ── Logs / misc ──
+*.log
